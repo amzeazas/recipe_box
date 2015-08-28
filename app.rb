@@ -13,8 +13,13 @@ end
 
 post('/recipes') do
   @recipe = Recipe.create({:name => params.fetch("recipe_name"), :description => params.fetch("description"), :instructions => params.fetch("instructions").gsub(/\n/, '<br>')})
-  @amount = Amount.new({:quantity => nil})
-  redirect("/recipe/#{@recipe.id()}")
+  # @amount = Amount.new({:quantity => nil})
+  redirect("/recipe/new/step2/#{@recipe.id()}")
+end
+
+get('/recipe/new/step2/:id') do
+  @recipe = Recipe.find(params.fetch("id").to_i())
+  erb(:recipe_form_2)
 end
 
 get('/recipe/:id') do
@@ -37,20 +42,20 @@ post('/ingredients') do
   @ingredient = Ingredient.create({:name => params.fetch("ingredient")})
   @amount = Amount.create({:quantity => params.fetch("quantity"), :recipe_id => @recipe.id(), :ingredient_id => @ingredient.id()})
 binding.pry
-  redirect("/recipe/#{@recipe.id()}")
+  redirect("/recipe/new/step2/#{@recipe.id()}")
 end
 
 post('/categories') do
   @recipe = Recipe.find(params.fetch("recipe_id").to_i())
   @category = Category.create({:name => params.fetch("category")})
   @category.update({:recipe_ids => @recipe.id()})
-  redirect("/recipe/#{@recipe.id()}")
+  redirect("/recipe/new/step2/#{@recipe.id()}")
 end
 
 post('/rating') do
   @recipe = Recipe.find(params.fetch("recipe_id").to_i())
   @recipe.update({:rating => params.fetch("rating").to_i()})
-  redirect("/recipe/#{@recipe.id()}")
+  redirect("/recipe/new/step2/#{@recipe.id()}")
 end
 
 get('/recipes/name') do
