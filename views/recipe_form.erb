@@ -7,7 +7,7 @@
 <form action="/recipes" method="post">
   <div class="form-group">
     <label for="recipe_name">Recipe name:</label>
-    <input id="recipe_name" name="recipe_name" class="form-control" type="text" placeholder="e.g. Pikachu's Popcorn Balls">
+    <input id="recipe_name" name="recipe_name" class="form-control" type="text" placeholder="e.g. Pikachu's Popcorn Balls" required>
   </div>
 
   <div class="form-group">
@@ -18,9 +18,7 @@
   <div class="form-group">
     <label for="instructions">Instructions:</label>
     <br>
-    <textarea name="instructions" rows="8" cols="40" placeholder="1. first step
-2. second step
-(use enter to write on a new line)"></textarea>
+    <textarea name="instructions" rows="8" cols="40" placeholder="1. first step (use enter to write on a new line)" required></textarea>
   </div>
   <br>
   <br>
