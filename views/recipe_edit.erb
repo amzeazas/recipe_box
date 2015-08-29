@@ -1,0 +1,63 @@
+<div class="page-header" style="background-color:#d9534f">
+  <center>
+  <h1><font color="white">Recidex</font></h1>
+  <h4><font color="white">Edit your recipe for <b><%= @recipe.name %></b> below!</font></h4>
+  </center>
+</div>
+<br>
+<center><h4>Update Recipe</h4></center>
+<form action="/recipe/<%= @recipe.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <div class="form-group">
+    <label for="name">Rename your recipe:</label>
+    <input id="name" name="name" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="description">Update description:</label>
+    <input id="description" name="description" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="instructions">Update instructions:</label>
+    <br>
+    <textarea name="instructions" rows="8" cols="40"></textarea>
+  </div>
+  <div class="btn-group" data-toggle="buttons">
+    <label for="rating">Update rating:</label>
+    <br>
+    <label class="btn btn-primary">
+      <input type="radio" name="rating" id="rating1" autocomplete="off" value=1> 1
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" name="rating" id="rating2" autocomplete="off" value=2> 2
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" name="rating" id="rating3" autocomplete="off" value=3> 3
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" name="rating" id="rating4" autocomplete="off" value=4> 4
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" name="rating" id="rating5" autocomplete="off" value=5> 5
+    </label>
+  </div>
+  <br>
+  <br>
+  <center><button type="submit" class="btn btn-info">Update Your Recipe</button></center>
+</form>
+<br>
+<h4>Update Categories</h4>
+<% if @categories.any?() %>
+  <form action="/recipe/<%= @recipe.id %>/categories" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <% @categories.each() do |category| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="category_ids[]" value="<%= category.id() %>"><%= category.name() %>
+        </label>
+      </div>
+    <% end %>
+    <button type="submit" class="btn btn-info">Update Categories</button>
+  </form>
+<% end %>
+<br>
+<a href="/recipe/<%= @recipe.id() %>">Back</a>

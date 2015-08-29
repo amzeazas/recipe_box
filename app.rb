@@ -13,7 +13,6 @@ end
 
 post('/recipes') do
   @recipe = Recipe.create({:name => params.fetch("recipe_name"), :description => params.fetch("description"), :instructions => params.fetch("instructions").gsub(/\n/, '<br>')})
-  # @amount = Amount.new({:quantity => nil})
   redirect("/recipe/new/step2/#{@recipe.id()}")
 end
 
@@ -33,9 +32,16 @@ delete('/recipe/:id') do
   redirect('/')
 end
 
-# patch('/recipe/:id') do
-#   # for update page
-# end
+get('/recipe/:id/edit') do
+  @recipe = Recipe.find(params.fetch("id").to_i())
+  @categories = Category.all()
+  erb(:recipe_edit)
+end
+
+patch('/recipe/:id/edit') do
+  @recipe = Recipe.find(params.fetch("id").to_i())
+  erb(:recipe)
+end
 
 post('/ingredients') do
   @recipe = Recipe.find(params.fetch("recipe_id").to_i())
