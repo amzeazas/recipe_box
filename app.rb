@@ -47,7 +47,6 @@ post('/ingredients') do
   @recipe = Recipe.find(params.fetch("recipe_id").to_i())
   @ingredient = Ingredient.create({:name => params.fetch("ingredient")})
   @amount = Amount.create({:quantity => params.fetch("quantity"), :recipe_id => @recipe.id(), :ingredient_id => @ingredient.id()})
-binding.pry
   redirect("/recipe/new/step2/#{@recipe.id()}")
 end
 
