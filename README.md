@@ -10,9 +10,9 @@ This app allows the user to add and organize their favorite recipes. In future v
 1. Clone the repo by typing **git clone https://github.com/azeazas/recipe_box.git** into the terminal.
 2. To bundle the gems, type **bundle** into the terminal.
 3. To build the developement and test databases, type the following into the terminal:
-...**rake db:create**
-...**rake db:migrate**
-...**rake db:test:prepare**
+  **rake db:create**
+  **rake db:migrate**
+  **rake db:test:prepare**
 4. Launch server by typing **ruby app.rb** into the terminal and going to **localhost:4567** in your browser.
 5. You can now begin adding and organizing your recipes!
 
