@@ -20,7 +20,7 @@ This app was built using Ruby, Sinatra, SQL, and ActiveRecord.
 
 ###Legal
 
-Copyright (c) 2015 Alexa Zeazas & Evan Clough
+Copyright (c) 2015 Alexa Zeazas & Jennifer Bell
 
 This software is licensed under the MIT license.
 
