@@ -6,6 +6,11 @@ By Alexa Zeazas & Jennifer Bell
 ###Description
 This app allows the user to add and organize their favorite recipes. In future versions, the user will also be able to search for recipes by category and ingredients, as well as update their existing recipes.
 
+_Goals for future updates_
+* _Add search function for users to search by category and ingrediates._
+* _Allow users to update their existing recipes._
+* _Fix duplicate ojects bug._
+
 ###Setup
 1. Clone the repo by typing **git clone https://github.com/azeazas/recipe_box.git** into the terminal.
 2. To bundle the gems, type **bundle** into the terminal.
