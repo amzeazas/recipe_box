@@ -4,7 +4,7 @@
 By Alexa Zeazas & Jennifer Bell
 
 ###Description
-This app allows the user to add and organize their favorite recipes. In future versions, the user will also be able to search for recipes by category and ingredients, as well as update their existing recipes.
+This app allows the user to add and organize their favorite recipes.
 
 _Goals for future updates_
 * _Add search function for users to search by category and ingrediates._
